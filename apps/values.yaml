@@ -8,3 +8,4 @@ config:
 
 applications:
   - name: test1
+  - name: test2
