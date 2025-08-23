@@ -4,7 +4,7 @@ config:
       server: https://kubernetes.default.svc
     source:
       repoURL: https://github.com/argoproj/argocd-example-apps
-      targetRevision: master
+      targetRevision: main
 
 applications:
   - name: test1

@@ -22,5 +22,13 @@ argo-repo:
 	argocd login localhost:8080 --insecure --username admin --password $$(kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d)
 	argocd repo add https://github.com/vasylherman/argocd.git --name vasyl-argocd
 
+argo-create-apps:
+	argocd app create apps \
+      --repo https://github.com/vasylherman/argocd.git \
+      --path apps \
+      --dest-server https://kubernetes.default.svc \
+      --dest-namespace argocd \
+      --sync-policy automated
+
 
 all: cluster argocd
