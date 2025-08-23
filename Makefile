@@ -18,5 +18,9 @@ argo-proxy:
 	@kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d && echo
 	@kubectl -n argocd port-forward services/argocd-server 8080:80
 
+argo-repo:
+	argocd login localhost:8080 --insecure --username admin --password $$(kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d)
+	argocd repo add https://github.com/vasylherman/argocd.git --name vasyl-argocd
+
 
 all: cluster argocd
