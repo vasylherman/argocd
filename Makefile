@@ -30,5 +30,7 @@ argo-create-apps:
       --dest-namespace argocd \
       --sync-policy automated
 
+development:
+	helm upgrade --install apps ./apps
 
 all: cluster argocd
