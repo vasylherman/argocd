@@ -33,4 +33,7 @@ argo-create-apps:
 development:
 	helm upgrade --install apps ./apps
 
+add-cluster:
+	argocd cluster add arn:aws:eks:eu-west-1:752501622762:cluster/prod-eu-product-ai
+
 all: cluster argocd
