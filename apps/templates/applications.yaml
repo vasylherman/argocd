@@ -5,8 +5,7 @@ kind: Application
 metadata:
   name: {{ printf "example.%s" .name | quote }}
   namespace: argocd
-  annotations:
-    argocd.argoproj.io/trigger-hook: "true"
+
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
