@@ -12,3 +12,6 @@ applications:
     tool:
       helm:
         releaseName: helm-guestbook
+        valueFiles:
+          - values-production.yaml
+
