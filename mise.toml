@@ -5,4 +5,7 @@ helm = "3.18.6"
 
 [hooks.enter]
 shell = "zsh"
-script = "eval \"$(argocd completion zsh)\""
+script = """
+eval "$(argocd completion zsh)"
+eval "$(helm completion zsh)"
+"""
