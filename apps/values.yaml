@@ -8,4 +8,7 @@ config:
 
 applications:
   - name: test1
-  - name: test2
+  - name: helm-guestbook
+    tool:
+      helm:
+        releaseName: helm-guestbook
